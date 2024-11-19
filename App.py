@@ -1,38 +1,69 @@
 import streamlit as st
-from Pages import home
-from Pages import project1, Project2, Project3
-from pygments.styles.dracula import background
-from streamlit_navigation_bar import st_navbar as navbar
+from Pages import home, project1, Project2, Project3
+from streamlit_navigation_bar import st_navbar as navbar, st_navbar
+import os
+from PIL import Image
+import pandas as pd
+import numpy as np
 
+# Загрузка фотки для лого
+image = Image.open('img/logo.png')
+st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
-st.set_page_config(initial_sidebar_state="collapsed")
+# путь к логотипу
+logo_path = os.path.join(os.path.dirname(__file__), "img", "fc-barcelona-logo.svg")
+pages = [" ", "home", "project1", "Project2", "Project3"]
 
-pages = ["home","project1", 'Project2','Project3']
-
-
+# Стили навигации
 styles = {
     "nav": {
-      "background-color": "rgb(123, 209, 146)",
+        "background-color": "red",
+        "display": "flex",
+        "justify-content": "center",
+        "padding": "10px",
+        "box-shadow": "0 2px 4px rgba(0, 0, 0, 0.1)"  # Лёгкая тень для объёма
+    },
+    "img": {
+        "position": "absolute",
+        "left": "15px",
+        "top": "5px",
+        "width": "90px",
+        "height": "40px"
     },
     "div": {
         "max-width": "32rem",
     },
     "span": {
         "border-radius": "0.5rem",
-        "color": "rgb(49, 51, 63)",
-        "margin": "0 0.125rem",
-        "padding": "0.4375rem 0.625rem",
+        "display": "block",
+        "color": "white",
+        "margin": "0 0.5rem",
+        "padding": "0.6rem 1.2rem",
+        "font-size": "16px",
+        "font-weight": "500",
+        "transition": "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
     },
     "active": {
-        "background-color": "rgba(105, 114, 255, 0.25)",
+        "background-color": "blue",  # При активации синий цвет
+        "color": "white",
+        "font-weight": "bold",
     },
     "hover": {
-        "background": "rgba(255, 255, 255,0.35)",
-    },
+        "background-color": "blue",  # При наведении синий цвет
+        "color": "white",
+    }
 }
 
-page = navbar(pages, styles = styles)
 
+options = {
+    "show_menu": False,
+    "show_sidebar": True,
+}
+
+
+page = st_navbar(pages, styles=styles, logo_path=logo_path, options=options)
+
+# Проверка активной страницы
 if page == "home":
     home.home().app()
 elif page == "project1":
@@ -43,6 +74,9 @@ elif page == "Project3":
     Project3.Project3().app()
 else:
     home.home().app()
+
+
+
 
 
 
