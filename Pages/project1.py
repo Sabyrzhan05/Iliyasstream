@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 class project1:
-    def __int__(self):
+    def __init__(self):
         pass
     def app(self):
         st.title('Creation of DataFrame')

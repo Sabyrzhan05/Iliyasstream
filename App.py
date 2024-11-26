@@ -12,7 +12,7 @@ st.set_page_config(initial_sidebar_state="collapsed", page_icon=image)
 
 # путь к логотипу
 logo_path = os.path.join(os.path.dirname(__file__), "img", "fc-barcelona-logo.svg")
-pages = [" ", "home", "project1", "Project2", "Project3"]
+pages = ["home", "project1", "Project2", "Project3"]
 
 # Стили навигации
 styles = {
