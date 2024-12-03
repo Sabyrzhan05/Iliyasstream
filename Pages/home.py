@@ -30,8 +30,8 @@ class home:
 
 
         lottie_coding = load_lottieurl("https://lottie.host/ef5c6fe8-c304-4f0b-a74e-4c80029a92d9/HvwLOSuiCr.json")
-        img_contact_form = Image.open(r"D:\VSCODE\pythonProject\img\ol.png")
-        img_lottie_animation = Image.open(r"D:\VSCODE\pythonProject\img\j.png")
+        img_contact_form = Image.open("img\ol.png")
+        img_lottie_animation = Image.open("img\j.png")
 
 
         with st.container():
