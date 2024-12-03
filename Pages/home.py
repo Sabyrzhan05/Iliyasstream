@@ -37,7 +37,7 @@ class home:
         with st.container():
             st.subheader("Hi, I am Iliyas :wave:")
             st.title("I am student ")
-            st.write("I am not gay")
+            st.write("Arizona Alga!")
 
 
         with st.container():
@@ -67,7 +67,7 @@ class home:
                 st.subheader("Barcelona 2010-2011")
                 st.write(
                     """
-                    Brief description of the project, what it achieves, or how it helps users.
+                    VISCA BARCA
                     """
                 )
 
@@ -79,14 +79,14 @@ class home:
                 st.subheader("Barcelona 2014-2015")
                 st.write(
                     """
-                    Brief description of the project and its impact or purpose.
+                   VISCA BARCA! BARCA ALGA!
                     """
                 )
 
 
         with st.container():
             st.write("---")
-            st.header("write your contact")
+            st.header("Write your contact")
             st.write("##")
 
             contact_form = """
